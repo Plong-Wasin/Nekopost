@@ -52,7 +52,6 @@ function a() {
     img.src = imageAddr;
     img.onload = function() {
         generatePage();
-        count = count + 1;
         if (check != imageAddrLen) {
             check = imageAddrLen;
             a();
