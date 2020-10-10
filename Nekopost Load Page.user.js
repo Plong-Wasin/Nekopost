@@ -1,20 +1,19 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      0.91
 // @description  Nekopost Load Page
 // @author       Wasin Phungwigrai
 // @include      https://www.nekopost.net/manga/*/*
 // @include      https://www.nekopost.net/doujin/*/*
-// @downloadURL
+// @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/Nekopost%20Load%20Page.user.js
+// @downloadURL  https://github.com/Plong-Wasin/Nekopost/raw/main/Nekopost%20Load%20Page.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
-/*document.getElementsByClassName("btn btn-success btn-sm")[3].innerHTML =
-  "Manga";*/
 var imageAddrLen;
 var imageAddr;
 var img;
-var count = 0;
+var check = 0;
 window.onload = function() {
     var btn = document.createElement("spam"); // Create a <button> element
     btn.innerHTML =
@@ -54,7 +53,8 @@ function a() {
     img.onload = function() {
         generatePage();
         count = count + 1;
-        if (count < 100) {
+        if (check != imageAddrLen) {
+            check = imageAddrLen;
             a();
         }
     };
