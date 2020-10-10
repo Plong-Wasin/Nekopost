@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    http://tampermonkey.net/
-// @version      0.91
+// @version      0.92
 // @description  Nekopost Load Page
 // @author       Wasin Phungwigrai
 // @include      https://www.nekopost.net/manga/*/*
