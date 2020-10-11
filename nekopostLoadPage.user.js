@@ -6,8 +6,8 @@
 // @author       Wasin Phungwigrai
 // @include      https://www.nekopost.net/manga/*/*
 // @include      https://www.nekopost.net/doujin/*/*
-// @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/Nekopost%20Load%20Page.user.js
-// @downloadURL  https://github.com/Plong-Wasin/Nekopost/raw/main/Nekopost%20Load%20Page.user.js
+// @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/NekopostLoadPage.user.js
+// @downloadURL  https://github.com/Plong-Wasin/Nekopost/raw/main/NekopostLoadPage.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
 var imageAddrLen;
