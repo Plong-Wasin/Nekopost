@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Nekopost Load Page
-// @namespace    http://tampermonkey.net/
+// @namespace    https://www.nekopost.net/
 // @version      0.92
 // @description  Nekopost Load Page
 // @author       Wasin Phungwigrai
