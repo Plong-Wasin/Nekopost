@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    https://www.nekopost.net/
-// @version      1.3
+// @version      1.4
 // @description  Nekopost Load Page
 // @author       Wasin Phungwigrai
 // @include      https://www.nekopost.net/manga/*/*
@@ -9,6 +9,7 @@
 // @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/NekopostLoadPage.user.js
 // @downloadURL  https://github.com/Plong-Wasin/Nekopost/raw/main/NekopostLoadPage.user.js
 // @grant        unsafeWindow
+// @grant        window.close
 // ==/UserScript==
 var imageAddrLen;
 var imageAddr;
