@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Nekopost Load Page
-// @namespace    https://www.nekopost.net/
-// @version      1.4.2
+// @namespace    https://github.com/Plong-Wasin/Nekopost
+// @version      1.4.3
 // @description  Nekopost Load Page
-// @author       Wasin Phungwigrai
+// @author       Plong
 // @include      https://www.nekopost.net/manga/*/*
 // @include      https://www.nekopost.net/doujin/*/*
 // @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/nekopostLoadPage.meta.js

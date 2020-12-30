@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nekopost Load Page
-// @namespace    https://www.nekopost.net/
-// @version      1.4.2
+// @namespace    https://github.com/Plong-Wasin/Nekopost
+// @version      1.4.3
 // @description  Nekopost Load Page
 // @author       Plong
 // @include      https://www.nekopost.net/manga/*/*
@@ -18,7 +18,7 @@ var count = 0;
 
 var btn = document.createElement("spam"); // Create a <button> element
 btn.innerHTML =
-    '<button class="btn btn-success btn-sm" onclick="window.location.href="https://www.nekopost.net/manga"">Manga</button>';
+    '<button class="btn btn-success btn-sm" onclick="window.location.href=\'https://www.nekopost.net/manga\'">Manga</button>';
 document
     .getElementById("bottom-menu")
     .insertBefore(btn, document.getElementById("bottom-menu").childNodes[0]);
