@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    https://www.nekopost.net/
-// @version      1.4.1
+// @version      1.4.2
 // @description  Nekopost Load Page
-// @author       Wasin Phungwigrai
+// @author       Plong
 // @include      https://www.nekopost.net/manga/*/*
 // @include      https://www.nekopost.net/doujin/*/*
-// @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/nekopostLoadPage.user.js
+// @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/nekopostLoadPage.meta.js
 // @downloadURL  https://github.com/Plong-Wasin/Nekopost/raw/main/nekopostLoadPage.user.js
-// @grant        unsafeWindow
+// '@grant        unsafeWindow
 // @grant        window.close
 // ==/UserScript==
 var imageAddrLen;
@@ -18,7 +18,7 @@ var count = 0;
 
 var btn = document.createElement("spam"); // Create a <button> element
 btn.innerHTML =
-    '<button class="btn btn-success btn-sm" onclick="gotoManga()">Manga</button>';
+    '<button class="btn btn-success btn-sm" onclick="window.location.href="https://www.nekopost.net/manga"">Manga</button>';
 document
     .getElementById("bottom-menu")
     .insertBefore(btn, document.getElementById("bottom-menu").childNodes[0]);
@@ -27,11 +27,9 @@ var countClass = getClass.length - 1;
 getClass[countClass].innerText = "X";
 getClass[countClass].style.backgroundColor = "red";
 getClass[countClass].style.borderColor = "red";
-getClass[countClass].onclick = closeNekopost;
-
-function closeNekopost() {
+getClass[countClass].onclick = function() {
     window.close();
-}
+};
 
 setTimeout(function() {
     if (document.getElementById("btnChangeChapterNextBottom").disabled) {
@@ -55,48 +53,27 @@ setTimeout(function() {
             );
         document.getElementById("btnClose").style.backgroundColor = "red";
         document.getElementById("btnClose").style.borderColor = "red";
-        document.getElementById("btnClose").onclick = closeNekopost;
+        document.getElementById("btnClose").onclick = function() {
+            window.close();
+        };
     }
 }, 3000);
 
-var i = 0;
+window.onload = function() {
+    newGeneratePage();
+};
 
-function run() {
-    if (i < 4)
-        try {
-            a();
-        } catch (error) {
-            setTimeout(() => {
-                i = i + 1;
-                run();
-            }, 1000);
-        }
-    else if ($("div").hasClass("img_item") == false) {
-        location.reload();
+function newGeneratePage() {
+    try {
+        generatePage();
+        let lastPage = document.getElementsByTagName("img");
+        lastPage[lastPage.length - 1].onload = function() {
+            newGeneratePage();
+        };
+        console.log("last");
+    } catch (error) {
+        setTimeout(() => {
+            newGeneratePage();
+        }, 1000);
     }
-}
-run();
-
-function a() {
-    imageAddrLen = $(".img_item").length;
-    imageAddr = $(".img_item")[imageAddrLen - 1].children[0].src;
-    img = new Image();
-    img.src = imageAddr;
-    img.onload = genPage;
-    img.onerror = genPage;
-}
-unsafeWindow.gotoManga = gotoManga;
-
-var imageLen = 0;
-
-function genPage() {
-    generatePage();
-    if (imageLen != $(".img_item").length) {
-        a();
-        imageLen = $(".img_item").length;
-    }
-}
-
-function gotoManga() {
-    window.location = "https://www.nekopost.net/manga";
 }
