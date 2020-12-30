@@ -8,6 +8,6 @@
 // @include      https://www.nekopost.net/doujin/*/*
 // @updateURL    https://github.com/Plong-Wasin/Nekopost/raw/main/nekopostLoadPage.meta.js
 // @downloadURL  https://github.com/Plong-Wasin/Nekopost/raw/main/nekopostLoadPage.user.js
-// @grant        unsafeWindow
+// '@grant        unsafeWindow
 // @grant        window.close
 // ==/UserScript==
