@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    https://github.com/Plong-Wasin/Nekopost
-// @version      1.4.3
+// @version      1.4.4
 // @description  Nekopost Load Page
 // @author       Plong
 // @include      https://www.nekopost.net/manga/*/*
@@ -31,7 +31,35 @@ getClass[countClass].onclick = function() {
     window.close();
 };
 
-setTimeout(function() {
+// setTimeout(function() {
+//     if (document.getElementById("btnChangeChapterNextBottom").disabled) {
+//         var btn2 = document.createElement("spam"); // Create a <button> element
+//         btn2.innerHTML =
+//             '<div id="manga" style="padding-bottom: 5px" class="mt-1 text-ellipsis"><span id="projectNameBottom"><a href="https://www.nekopost.net//manga/" class="btn btn-success">Manga</a></span></div>';
+//         document
+//             .getElementsByClassName("text-center mb-5")[0]
+//             .insertBefore(
+//                 btn2,
+//                 document.getElementsByClassName("text-center mb-5")[0].childNodes[0]
+//             );
+//         var btn3 = document.createElement("spam"); // Create a <button> element
+//         btn3.innerHTML =
+//             ' <button id="btnClose" class="btn btn-success" style="display: hide;" onclick="closeNekopost()">Close</button>';
+//         document
+//             .getElementsByClassName("text-center mb-5")[0]
+//             .insertBefore(
+//                 btn3,
+//                 document.getElementsByClassName("text-center mb-5")[0].childNodes[0]
+//             );
+//         document.getElementById("btnClose").style.backgroundColor = "red";
+//         document.getElementById("btnClose").style.borderColor = "red";
+//         document.getElementById("btnClose").onclick = function() {
+//             window.close();
+//         };
+//     }
+// }, 3000);
+
+$(document).ready(function() {
     if (document.getElementById("btnChangeChapterNextBottom").disabled) {
         var btn2 = document.createElement("spam"); // Create a <button> element
         btn2.innerHTML =
@@ -57,11 +85,8 @@ setTimeout(function() {
             window.close();
         };
     }
-}, 3000);
-
-window.onload = function() {
     newGeneratePage();
-};
+});
 
 function newGeneratePage() {
     try {

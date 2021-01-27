@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    https://github.com/Plong-Wasin/Nekopost
-// @version      1.4.3
+// @version      1.4.4
 // @description  Nekopost Load Page
 // @author       Plong
 // @include      https://www.nekopost.net/manga/*/*
