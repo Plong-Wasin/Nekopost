@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nekopost Load Page
 // @namespace    https://github.com/Plong-Wasin/Nekopost
-// @version      1.4.6
+// @version      1.4.7
 // @description  Nekopost Load Page
 // @author       Plong
 // @include      https://www.nekopost.net/manga/*/*
@@ -15,6 +15,7 @@ var imageAddrLen;
 var imageAddr;
 var img;
 var count = 0;
+let errorPage = Array();
 
 function createBtnBR() {
     let btn = document.createElement("spam"); // Create a <button> element
@@ -103,6 +104,19 @@ function newGeneratePage() {
         let lastPage = document.getElementsByTagName("img");
         lastPage[lastPage.length - 1].onload = function() {
             newGeneratePage();
+        };
+        lastPage[lastPage.length - 1].onerror = function() {
+            let checkThisPageError = 0;
+            errorPage.every(function(a, b) {
+                if (lastPage.length - 1 == a) {
+                    checkThisPageError = 1;
+                    return null;
+                }
+            });
+            if (checkThisPageError == 0) {
+                errorPage.push(lastPage.length - 1);
+                newGeneratePage();
+            }
         };
     } catch (error) {
         setTimeout(() => {
